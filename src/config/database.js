@@ -3,10 +3,8 @@ import mongoose from 'mongoose'
 mongoose.Promise = global.Promise
 
 const config = {
-  uri: 'mongodb+srv://cluster0-lwpkc.mongodb.net/test',
+  uri: 'mongodb://localhost:27017/node-hapijs',
   options: {
-    user: 'test',
-    pass: '1!2@3#4$',
     useNewUrlParser: true,
     useFindAndModify: false,
   },
@@ -16,8 +14,7 @@ mongoose.connection.on('open', () => {
   console.log('Successfully connected to database.')
 })
 
-mongoose.connection.on('error', (error) => {
-  console.log(error)
+mongoose.connection.on('error', () => {
   throw new Error('Could not connect to MongoDB.')
 })
 

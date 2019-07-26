@@ -3,7 +3,7 @@ import Joi from 'joi'
 import UsersController from '../controllers/users'
 import UserModel from '../models/users'
 
-const usersController = new UsersController(UserModel);
+const usersController = new UsersController(UserModel)
 
 const userRoute = (server) => {
 
